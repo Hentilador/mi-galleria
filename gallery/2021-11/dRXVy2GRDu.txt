@@ -1,0 +1,83 @@
+﻿ #include <stdio.h>
+ #include <stdlib.h>
+ #include <conio.h>
+ int main() {
+   int rps,player,computer,score=0;
+   Start:
+   system("cls");
+   srand(time(0));
+   computer = (rand() % 3) + 1;
+
+   printf("Rock! Paper! Scissors!\nR is Rock, P is Paper, S is Scissors\n");
+   if(score != 0) {
+      printf("Current Score: %d" ,score);
+   }
+   rps = getch();
+   if(rps == 'r') {
+      system("cls");
+      player = 1;
+      printf("You chose Rock!\n");
+      if(computer == 1) {
+         printf("Computer chose Rock! It's a Tie!\n\n");
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 2) {
+         printf("Computer chose Paper! You Lose!\n\n");
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 3) {
+         printf("Computer chose Scissors! You Win!\n\n");
+         score++;
+         system("pause");
+         goto Start;
+      }
+   } 
+   else if(rps == 'p') {
+      system("cls");
+      player = 2;
+      printf("You chose Paper!\n");
+      if(computer == 1) {
+         printf("Computer chose Rock! You Win!\n\n");
+         score++;
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 2) {
+         printf("Computer chose Paper! It's a Tie!\n\n");
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 3) {
+         printf("Computer chose Scissors! You Lose!\n\n");
+         system("pause");
+         goto Start;
+      }
+   }
+   else if(rps == 's') {
+      system("cls");
+      player = 3;
+      printf("You chose Scissors!\n");
+      if(computer == 1) {
+         printf("Computer chose Rock! You Lose!\n\n");
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 2) {
+         printf("Computer chose Paper! You Win!\n\n");
+         score++;
+         system("pause");
+         goto Start;
+      }
+      else if(computer == 3) {
+         printf("Computer chose Scissors! It's a Tie!\n\n");
+         system("pause");
+         goto Start;
+      }      
+   }
+   else {
+      goto Start;
+   }
+   return 0;
+ }

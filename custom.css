@@ -1,2 +1,15 @@
 /* Your custom styles goes here */
-style {background-color:#282A35; color:white;}
+body {
+  background: #282A35;
+  color: #fff;
+}
+header {
+  background: #282A35;
+  color: #fff;
+}
+h1 a {
+  color: #fff;
+}
+nav.breadcrumbs a {
+  color: #fff;
+}

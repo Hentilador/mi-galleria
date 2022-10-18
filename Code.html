@@ -6,64 +6,68 @@
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>Hedia - Code</title>
       <link rel="stylesheet" href="public/lightgallery/css/lightgallery.css" />
-      <link rel="stylesheet" href="public/lightgallery/css/lg-exif.min.css" />
+      <link rel="stylesheet" href="public/lightslider/css/lightslider.min.css" />
       <link rel="stylesheet" href="public/videojs/video-js.min.css" />
+      <link rel="stylesheet" href="public/lightgallery/css/lg-exif.min.css" />
       <link rel="stylesheet" href="public/core.css" />
       <link rel="stylesheet" href="public/theme.css" />
+      <link rel="stylesheet" href="public/justifiedgallery/justifiedGallery.min.css" />
   </head>
 
   <body>
-
-    <header>
-      <a href="index.html">
-        <h1>Hedia</h1>
-      </a>
-    </header>
     
-    <!--
-      Breadcrumbs of parent albums
-    -->
+    <div id="container">
+    
+      <!--
+        Gallery title
+      -->
+      <header>
+        <h1><a href="index.html">Hedia</a></h1>
+      </header>
+    
+      <!--
+        Breadcrumbs of parent albums
+      -->
       <nav class="breadcrumbs">
-    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a class="breadcrumb-item" href="Code.html">Code</a>
+    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;/&nbsp;<a class="breadcrumb-item" href="Code.html">Code</a>
       </nav>
     
-    <!--
-      Nested albums
-    -->
-    <ul id="galleries">
-     <li>
-       <a href="Code-C.html">
-         <h3>C</h3>
-         <div class="meta">
-           11 photos<br />
-           18 Oct 2022 - 18 Oct 2022
-         </div>
-         <ul class="grid"><li><img src="media/thumbs/Code/C/algorithms_1.c.png" /></li><li><img src="media/thumbs/Code/C/algorithms_2.c.png" /></li><li><img src="media/thumbs/Code/C/clock.c.png" /></li><li><img src="media/thumbs/Code/C/mayabang.png" /></li>     </ul>
-       </a>
-     </li>
-    </ul>
     
-    <!--
-      Render all thumbnails
-    -->
-    <ul id="media">
-    </ul>
+      <!--
+        Nested albums, if any
+      -->
+      <div id="albums" class="justified-gallery">
+            <a href="Code-C.html">
+              <img src="media/small/Code/C/algorithms_1.c.png" alt="">
+              <div class="caption" style="display: inline-block">
+                <h3>C</h3>
+                <div class="summary">11 photos</div>
+              </div>
+            </a>
+      </div>
     
-    <!--
-      Pagination
-    -->
+      <!--
+        All photos and videos
+      -->
+      <ul id="media" class="clearfix justified-gallery">
+      </ul>
     
-    <!--
-      Zip file link
-    -->
+      <!--
+        Pagination
+      -->
     
+      <!--
+        Zip file link
+      -->
     
-    <!--
-      Optional footer
-    -->
-    <footer>
-      <p>https://www.facebook.com/sumtingwongwidme</p>
-    </footer>
+      <!--
+        Optional footer
+      -->
+      <footer>
+        <p>https://www.facebook.com/sumtingwongwidme</p>
+      </footer>
+    
+    </div>
     <!-- Video loader -->
     <div id="videos">
     </div>
@@ -74,11 +78,13 @@
     <script src="public/videojs/video.min.js"></script>
     <!-- LightGallery -->
     <script src="public/lightgallery/js/lightgallery.js"></script>
+    <script src="public/lightslider/js/lightslider.min.js"></script>
     <script src="public/lightgallery/js/lg-autoplay.js"></script>
     <script src="public/lightgallery/js/lg-pager.js"></script>
     <script src="public/lightgallery/js/lg-thumbnail.js"></script>
     <script src="public/lightgallery/js/lg-video.js"></script>
     <script src="public/lightgallery/js/lg-exif.min.js"></script>
+    <script src="public/justifiedgallery/jquery.justifiedGallery.min.js"></script>
 
     <script>
       $(document).ready(function() {
@@ -88,10 +94,28 @@
           loop : false,
           download: true,
           counter: true,
-          videojs: true
+          videojs: true,
+          exThumbImage: 'data-exthumbimage',
+        });
+
+        // Init justified gallery for albums
+        $("#albums").justifiedGallery({
+          margins: 10,
+          rowHeight: 300,
+          maxRowHeight: 325,
+        });
+
+        // Init justified gallery for photos
+        $("#media").justifiedGallery({
+          selector: '.albumList',
+          waitThumbnailsLoad: false,
+          margins: 10,
+          rowHeight: 250,
+          maxRowHeight: 275,
         });
       });
     </script>
+
 
 
   </body>

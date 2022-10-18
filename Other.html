@@ -6,82 +6,79 @@
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>Hedia - Other</title>
       <link rel="stylesheet" href="public/lightgallery/css/lightgallery.css" />
-      <link rel="stylesheet" href="public/lightgallery/css/lg-exif.min.css" />
+      <link rel="stylesheet" href="public/lightslider/css/lightslider.min.css" />
       <link rel="stylesheet" href="public/videojs/video-js.min.css" />
+      <link rel="stylesheet" href="public/lightgallery/css/lg-exif.min.css" />
       <link rel="stylesheet" href="public/core.css" />
       <link rel="stylesheet" href="public/theme.css" />
+      <link rel="stylesheet" href="public/justifiedgallery/justifiedGallery.min.css" />
   </head>
 
   <body>
-
-    <header>
-      <a href="index.html">
-        <h1>Hedia</h1>
-      </a>
-    </header>
     
-    <!--
-      Breadcrumbs of parent albums
-    -->
+    <div id="container">
+    
+      <!--
+        Gallery title
+      -->
+      <header>
+        <h1><a href="index.html">Hedia</a></h1>
+      </header>
+    
+      <!--
+        Breadcrumbs of parent albums
+      -->
       <nav class="breadcrumbs">
-    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a class="breadcrumb-item" href="Other.html">Other</a>
+    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;/&nbsp;<a class="breadcrumb-item" href="Other.html">Other</a>
       </nav>
     
-    <!--
-      Nested albums
-    -->
-    <ul id="galleries">
-    </ul>
     
-    <!--
-      Render all thumbnails
-    -->
-    <ul id="media">
-        
-          <li data-src="media/large/Other/101822_1137AM.png"
+      <!--
+        Nested albums, if any
+      -->
+      <div id="albums" class="justified-gallery">
+      </div>
+    
+      <!--
+        All photos and videos
+      -->
+      <ul id="media" class="clearfix justified-gallery">
+          
+          <div class="albumList"
               data-sub-html=""
-              data-download-url="media/original/Other/101822_1137AM.png"
-              
-              data-filename="101822_1137AM.png"
-        
-            >
-            <a href="media/original/Other/101822_1137AM.png">
-              <img src="media/thumbs/Other/101822_1137AM.png"
-                   width="120"
-                   height="120"
-                   alt="101822_1137AM.png" />
-            </a>
-          </li>    
-          <li data-src="media/large/Other/Jesus.png"
+              data-download-url="media/original/Other/101822_1137AM.png"data-src="media/large/Other/101822_1137AM.png"data-exthumbimage="media/thumbs/Other/101822_1137AM.png"data-filename="101822_1137AM.png"><a href="media/large/Other/101822_1137AM.png"><img
+                      src="media/small/Other/101822_1137AM.png"
+                      width="533.59375"
+                      height="300"alt="101822_1137AM.png"/>
+              </a>
+          
+          </div>      
+          <div class="albumList"
               data-sub-html=""
-              data-download-url="media/original/Other/Jesus.png"
-              
-              data-filename="Jesus.png"
-        
-            >
-            <a href="media/original/Other/Jesus.png">
-              <img src="media/thumbs/Other/Jesus.png"
-                   width="120"
-                   height="120"
-                   alt="Jesus.png" />
-            </a>
-          </li></ul>
+              data-download-url="media/original/Other/Jesus.png"data-src="media/large/Other/Jesus.png"data-exthumbimage="media/thumbs/Other/Jesus.png"data-filename="Jesus.png"><a href="media/large/Other/Jesus.png"><img
+                      src="media/small/Other/Jesus.png"
+                      width="300"
+                      height="300"alt="Jesus.png"/>
+              </a>
+          
+          </div>  </ul>
     
-    <!--
-      Pagination
-    -->
+      <!--
+        Pagination
+      -->
     
-    <!--
-      Zip file link
-    -->
+      <!--
+        Zip file link
+      -->
     
+      <!--
+        Optional footer
+      -->
+      <footer>
+        <p>https://www.facebook.com/sumtingwongwidme</p>
+      </footer>
     
-    <!--
-      Optional footer
-    -->
-    <footer>
-      <p>https://www.facebook.com/sumtingwongwidme</p>
-    </footer>
+    </div>
     <!-- Video loader -->
     <div id="videos">
     </div>
@@ -92,11 +89,13 @@
     <script src="public/videojs/video.min.js"></script>
     <!-- LightGallery -->
     <script src="public/lightgallery/js/lightgallery.js"></script>
+    <script src="public/lightslider/js/lightslider.min.js"></script>
     <script src="public/lightgallery/js/lg-autoplay.js"></script>
     <script src="public/lightgallery/js/lg-pager.js"></script>
     <script src="public/lightgallery/js/lg-thumbnail.js"></script>
     <script src="public/lightgallery/js/lg-video.js"></script>
     <script src="public/lightgallery/js/lg-exif.min.js"></script>
+    <script src="public/justifiedgallery/jquery.justifiedGallery.min.js"></script>
 
     <script>
       $(document).ready(function() {
@@ -106,10 +105,28 @@
           loop : false,
           download: true,
           counter: true,
-          videojs: true
+          videojs: true,
+          exThumbImage: 'data-exthumbimage',
+        });
+
+        // Init justified gallery for albums
+        $("#albums").justifiedGallery({
+          margins: 10,
+          rowHeight: 300,
+          maxRowHeight: 325,
+        });
+
+        // Init justified gallery for photos
+        $("#media").justifiedGallery({
+          selector: '.albumList',
+          waitThumbnailsLoad: false,
+          margins: 10,
+          rowHeight: 250,
+          maxRowHeight: 275,
         });
       });
     </script>
+
 
 
   </body>

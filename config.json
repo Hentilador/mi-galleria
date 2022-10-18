@@ -3,10 +3,12 @@
   "output": "./build_output",
   "title": "Hedia",
   "sort-albums-by": "end-date",
+  "sort-albums-direction": "desc",
   "sort-media-by": "date",
+  "sort-media-direction": "desc",
   "download-photos": "copy",
   "cleanup": true,
-  "theme": "classic",
+  "theme": "flow",
   "theme-style": "./custom.css",
   "footer": "https://www.facebook.com/sumtingwongwidme",
   "usage-stats": false

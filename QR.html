@@ -4,7 +4,7 @@
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no" />
-      <title>Hedia - Home</title>
+      <title>Hedia - QR</title>
       <link rel="stylesheet" href="public/lightgallery/css/lightgallery.css" />
       <link rel="stylesheet" href="public/lightslider/css/lightslider.min.css" />
       <link rel="stylesheet" href="public/videojs/video-js.min.css" />
@@ -29,7 +29,7 @@
         Breadcrumbs of parent albums
       -->
       <nav class="breadcrumbs">
-    <a class="breadcrumb-item" href="index.html">Home</a>
+    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;/&nbsp;<a class="breadcrumb-item" href="QR.html">QR</a>
       </nav>
     
     
@@ -37,48 +37,22 @@
         Nested albums, if any
       -->
       <div id="albums" class="justified-gallery">
-            <a href="C.html">
-              <img src="media/small/C/algorithms_1.c.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>C</h3>
-                <div class="summary">11 photos</div>
-              </div>
-            </a>
-            <a href="EL-14-IT-ERA.html">
-              <img src="media/small/EL%2014%20-%20IT%20ERA/Midterm%20Quiz%201.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>EL 14 - IT ERA</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
-            <a href="Guide.html">
-              <img src="media/small/Guide/10-27-22_brave_09;32;49AM.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>Guide</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
-            <a href="Other.html">
-              <img src="media/small/Other/Jesus.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>Other</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
-            <a href="QR.html">
-              <img src="media/small/QR/5ME0CjyGU.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>QR</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
       </div>
     
       <!--
         All photos and videos
       -->
       <ul id="media" class="clearfix justified-gallery">
-      </ul>
+          
+          <div class="albumList"
+              data-sub-html=""
+              data-download-url="media/original/QR/5ME0CjyGU.png"data-src="media/large/QR/5ME0CjyGU.png"data-exthumbimage="media/thumbs/QR/5ME0CjyGU.png"data-filename="5ME0CjyGU.png"><a href="media/large/QR/5ME0CjyGU.png"><img
+                      src="media/small/QR/5ME0CjyGU.png"
+                      width="300"
+                      height="300"alt="5ME0CjyGU.png"/>
+              </a>
+          
+          </div>  </ul>
     
       <!--
         Pagination
@@ -144,30 +118,6 @@
       });
     </script>
 
-      <script id="slider-js" data-interval="">
-        $(document).ready(function () {
-          let waitTime = 1000;
-
-          try {
-            waitTime = parseInt($("#slider-js").data("interval"));
-          } catch (e) {
-            console.error("Invalid speed value for slider: " + waitTime + "\n" + e);
-          }
-
-          $("#lightSlider").lightSlider({
-            auto: true,
-            loop: true,
-            item: 1,
-            gallery: true,
-            pause: waitTime,
-            onSliderLoad: (el) => {
-              el.lightGallery({
-                selector: "#lightSlider li"
-              })
-            }
-          });
-        });
-      </script>
 
 
   </body>

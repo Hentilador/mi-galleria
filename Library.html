@@ -4,7 +4,7 @@
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no" />
-      <title>Hedia - Home</title>
+      <title>Hedia - Library</title>
       <link rel="stylesheet" href="public/lightgallery/css/lightgallery.css" />
       <link rel="stylesheet" href="public/lightslider/css/lightslider.min.css" />
       <link rel="stylesheet" href="public/videojs/video-js.min.css" />
@@ -29,7 +29,7 @@
         Breadcrumbs of parent albums
       -->
       <nav class="breadcrumbs">
-    <a class="breadcrumb-item" href="index.html">Home</a>
+    <a class="breadcrumb-item" href="index.html">Home</a>&nbsp;/&nbsp;<a class="breadcrumb-item" href="Library.html">Library</a>
       </nav>
     
     
@@ -37,41 +37,49 @@
         Nested albums, if any
       -->
       <div id="albums" class="justified-gallery">
-            <a href="Guide.html">
-              <img src="media/small/Guide/10-27-22_brave_09;32;49AM.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>Guide</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
-            <a href="MC-Skins.html">
-              <img src="media/small/MC%20Skins/Jesus.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>MC Skins</h3>
-                <div class="summary">1 photo</div>
-              </div>
-            </a>
-            <a href="Library.html">
-              <img src="media/small/Library/404.jpg" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>Library</h3>
-                <div class="summary">4 photos</div>
-              </div>
-            </a>
-            <a href="Code.html">
-              <img src="media/small/Code/C/algorithms_2.c.png" alt="">
-              <div class="caption" style="display: inline-block">
-                <h3>Code</h3>
-                <div class="summary">1 album, 11 photos</div>
-              </div>
-            </a>
       </div>
     
       <!--
         All photos and videos
       -->
       <ul id="media" class="clearfix justified-gallery">
-      </ul>
+          
+          <div class="albumList"
+              data-sub-html=""
+              data-download-url="media/original/Library/404.webp"data-src="media/large/Library/404.jpg"data-exthumbimage="media/thumbs/Library/404.jpg"data-filename="404.webp"><a href="media/large/Library/404.jpg"><img
+                      src="media/small/Library/404.jpg"
+                      width="527.6381909547739"
+                      height="300"alt="404.webp"/>
+              </a>
+          
+          </div>      
+          <div class="albumList"
+              data-sub-html=""
+              data-download-url="media/original/Library/Dream_TradingCard%20(35).jpg"data-src="media/large/Library/Dream_TradingCard%20(35).jpg"data-exthumbimage="media/thumbs/Library/Dream_TradingCard%20(35).jpg"data-filename="Dream_TradingCard (35).jpg"><a href="media/large/Library/Dream_TradingCard%20(35).jpg"><img
+                      src="media/small/Library/Dream_TradingCard%20(35).jpg"
+                      width="183.67346938775512"
+                      height="300"alt="Dream_TradingCard (35).jpg"/>
+              </a>
+          
+          </div>      
+          <div class="albumList"
+              data-sub-html=""
+              data-download-url="media/original/Library/eragon-christopherpaolini.jpg"data-src="media/large/Library/eragon-christopherpaolini.jpg"data-exthumbimage="media/thumbs/Library/eragon-christopherpaolini.jpg"data-filename="eragon-christopherpaolini.jpg"><a href="media/large/Library/eragon-christopherpaolini.jpg"><img
+                      src="media/small/Library/eragon-christopherpaolini.jpg"
+                      width="199.22523519645821"
+                      height="300"alt="eragon-christopherpaolini.jpg"/>
+              </a>
+          
+          </div>      
+          <div class="albumList"
+              data-sub-html=""
+              data-download-url="media/original/Library/littleprince.jpg"data-src="media/large/Library/littleprince.jpg"data-exthumbimage="media/thumbs/Library/littleprince.jpg"data-filename="littleprince.jpg"><a href="media/large/Library/littleprince.jpg"><img
+                      src="media/small/Library/littleprince.jpg"
+                      width="199.55654101995566"
+                      height="300"alt="littleprince.jpg"/>
+              </a>
+          
+          </div>  </ul>
     
       <!--
         Pagination
@@ -137,30 +145,6 @@
       });
     </script>
 
-      <script id="slider-js" data-interval="">
-        $(document).ready(function () {
-          let waitTime = 1000;
-
-          try {
-            waitTime = parseInt($("#slider-js").data("interval"));
-          } catch (e) {
-            console.error("Invalid speed value for slider: " + waitTime + "\n" + e);
-          }
-
-          $("#lightSlider").lightSlider({
-            auto: true,
-            loop: true,
-            item: 1,
-            gallery: true,
-            pause: waitTime,
-            onSliderLoad: (el) => {
-              el.lightGallery({
-                selector: "#lightSlider li"
-              })
-            }
-          });
-        });
-      </script>
 
 
   </body>

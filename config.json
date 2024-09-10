@@ -1,15 +1,17 @@
 {
   "input": "./gallery",
   "output": "./build_output",
-  "title": "Hedia",
+  "title": "Gallery",
   "sort-albums-by": "end-date",
   "sort-albums-direction": "desc",
   "sort-media-by": "date",
   "sort-media-direction": "desc",
-  "download-photos": "copy",
+  "photo-quality": 100,
+  "photo-preview": "copy",
+  "photo-download": "copy",
   "cleanup": true,
   "theme": "flow",
   "theme-style": "./custom.css",
-  "footer": "https://www.facebook.com/sumtingwongwidme",
-  "usage-stats": false
+  "footer": "https://github.com/Hentilador",
+  "usage-stats": true
 }

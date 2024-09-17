@@ -1,5 +1,5 @@
 # mi-galleria
-Personal Image Host
+Personal Online Gallery
 
 ### [Literally just click on me]
 
